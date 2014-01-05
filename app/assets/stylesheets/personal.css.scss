@@ -5,15 +5,18 @@
   padding: 0 10px 0 10px;
   .nav-link {
     text-align: center;
-    padding: 0px 5px 0px 5px;
-    border: solid;
-    background-color: red;
+    padding: 15px 5px 0px 5px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
   #social-links {
     position: absolute;
     width: 100%;
     bottom: 0;
     a {
+      text-decoration: none;
       float: left;
       padding: 1px;
     }

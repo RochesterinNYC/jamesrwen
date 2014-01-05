@@ -5,6 +5,10 @@ PersonalSite::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  match "/github", to: redirect("https://github.com/RochesterinNYC"), as: :github, via: :get
+  match "/linkedin", to: redirect("http://www.linkedin.com/in/jamesrwen"), as: :linkedin, via: :get
+  match "/twitter", to: redirect("https://twitter.com/RochesterinNYC"), as: :twitter, via: :get
+  match "/soundcloud", to: redirect("https://soundcloud.com/james-rochester-wen"), as: :soundcloud, via: :get
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

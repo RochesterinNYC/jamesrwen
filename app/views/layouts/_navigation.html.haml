@@ -1,28 +1,26 @@
 %header#vertical-nav
   .nav-link
-    Home
+    = link_to "James Wen", root_url
+  %br
   .nav-link
-    About
+    = link_to "Home", root_url
   .nav-link
-    Education
+    = link_to "About"
   .nav-link
-    Class Projects
+    = link_to "Education"
   .nav-link
-    TA Notes
+    = link_to "Class Projects"
   .nav-link
-    Hackathons
+    = link_to "TA Notes"
   .nav-link
-    Personal Portfolio
+    = link_to "Hackathons"
   .nav-link
-    Miscellaneous
+    = link_to "Personal Portfolio"
+  .nav-link
+    = link_to "Miscellaneous"
   #social-links
-    %a
-      = image_tag("github-icon.png")
-    %a
-      = image_tag("linkedin-icon.png")
-    %a
-      = image_tag("twitter-icon.png")
-    %a
-      = image_tag("soundcloud-icon.png")
-    %a
-      = image_tag("email-icon.png")
+    = link_to image_tag("github-icon.png"), github_path, target: "_blank"
+    = link_to image_tag("linkedin-icon.png"), linkedin_path, target: "_blank"
+    = link_to image_tag("twitter-icon.png"), twitter_path, target: "_blank"
+    = link_to image_tag("soundcloud-icon.png"), soundcloud_path, target: "_blank"
+    = mail_to PersonalSite::PERSONAL_EMAIL, image_tag("email-icon.png")

@@ -12,6 +12,7 @@ require "sprockets/railtie"
 Bundler.require(:default, Rails.env)
 
 module PersonalSite
+  PERSONAL_EMAIL = "jrw2175@columbia.edu"
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
