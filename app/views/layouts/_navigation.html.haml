@@ -1,23 +1,23 @@
 %header#vertical-nav
   .nav-link
-    = link_to "James Wen", root_url
+    = link_to "James Wen", root_path
   %br
   .nav-link
-    = link_to "Home", root_url
+    = link_to "Home", root_path
   .nav-link
-    = link_to "About"
+    = link_to "About", about_path
   .nav-link
-    = link_to "Education"
+    = link_to "Education", education_path
   .nav-link
-    = link_to "Class Projects"
+    = link_to "Class Projects", projects_path
   .nav-link
-    = link_to "TA Notes"
+    = link_to "TA Notes", ta_path
   .nav-link
-    = link_to "Hackathons"
+    = link_to "Hackathons", hackathons_path
   .nav-link
-    = link_to "Personal Portfolio"
+    = link_to "Personal Portfolio", portfolio_path
   .nav-link
-    = link_to "Miscellaneous"
+    = link_to "Miscellaneous", miscellaneous_path
   #social-links
     = link_to image_tag("github-icon.png"), github_path, target: "_blank"
     = link_to image_tag("linkedin-icon.png"), linkedin_path, target: "_blank"

@@ -3,7 +3,15 @@ PersonalSite::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'pages#index'
+
+  match "/about", to: "pages#about", as: :about, via: :get
+  match "/education", to: "pages#education", as: :education, via: :get
+  match "/class-projects", to: "pages#projects", as: :projects, via: :get
+  match "/ta", to: "pages#ta", as: :ta, via: :get
+  match "/hackathons", to: "pages#hackathons", as: :hackathons, via: :get
+  match "/portfolio", to: "pages#portfolio", as: :portfolio, via: :get
+  match "/miscellaneous", to: "pages#miscellaneous", as: :miscellaneous, via: :get
 
   match "/github", to: redirect("https://github.com/RochesterinNYC"), as: :github, via: :get
   match "/linkedin", to: redirect("http://www.linkedin.com/in/jamesrwen"), as: :linkedin, via: :get

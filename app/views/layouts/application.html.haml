@@ -8,5 +8,8 @@
     = csrf_meta_tags
   %body
     = render 'layouts/navigation'
-    .content
-      = yield
+    .content.text-center
+      %h3
+        = @title
+      .frame
+        = yield
