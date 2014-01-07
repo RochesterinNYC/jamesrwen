@@ -7,7 +7,7 @@ PersonalSite::Application.routes.draw do
 
   match "/about", to: "pages#about", as: :about, via: :get
   match "/education", to: "pages#education", as: :education, via: :get
-  match "/class-projects", to: "pages#projects", as: :projects, via: :get
+  match "/class-projects", to: "pages#projects", as: :classprojects, via: :get
   match "/ta", to: "pages#ta", as: :ta, via: :get
   match "/hackathons", to: "pages#hackathons", as: :hackathons, via: :get
   match "/portfolio", to: "pages#portfolio", as: :portfolio, via: :get
@@ -17,6 +17,8 @@ PersonalSite::Application.routes.draw do
   match "/linkedin", to: redirect("http://www.linkedin.com/in/jamesrwen"), as: :linkedin, via: :get
   match "/twitter", to: redirect("https://twitter.com/RochesterinNYC"), as: :twitter, via: :get
   match "/soundcloud", to: redirect("https://soundcloud.com/james-rochester-wen"), as: :soundcloud, via: :get
+
+  resources :projects
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

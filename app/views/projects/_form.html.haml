@@ -1,0 +1,26 @@
+.frame
+  = form_for(project) do |f|
+    .row
+      = f.label :category
+      = f.text_field :category
+    .row
+      = f.label :title
+      = f.text_field :title
+    .row
+      = f.label :description
+      = f.text_field :description
+    .row
+      = f.label :site_link
+      = f.text_field :site_link
+    .row
+      = f.label :github_link
+      = f.text_field :github_link
+    .row
+      = f.label :download_link
+      = f.text_field :download_link
+    .row
+      = f.label :priority
+      = f.text_field :priority
+    %br
+    .row
+      = f.submit 'Save'
