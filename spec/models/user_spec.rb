@@ -10,7 +10,7 @@ describe User do
       @new_password = "newpassword123"
       user.reset_password(@new_password, @new_password)
       expect(user.password_digest).not_to eq(@old_digest)
-      expect(user.authenticate(@new_password)).should be_true
+      expect(user.authenticate(@new_password)).to be_true
     end
   end
 
