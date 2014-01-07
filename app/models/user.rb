@@ -7,9 +7,15 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/
   has_secure_password
 
+  before_save :downcase_email
+
   def reset_password(password, password_confirmation)
     update_attributes(password: password, password_confirmation: password_confirmation)
     self.save!
+  end
+
+  def downcase_email
+    self.email = email.downcase
   end
 
 end

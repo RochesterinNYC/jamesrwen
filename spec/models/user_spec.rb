@@ -13,5 +13,12 @@ describe User do
       expect(user.authenticate(@new_password)).to be_true
     end
   end
+  context "valid email addresses" do
+    let(:user) { User.make! ({ email: 'ACCOUNT@test.COM'})}
+    it "should have downcase email" do
+      user.save
+      expect(user.email).to eq("account@test.com")
+    end
+  end
 
 end
