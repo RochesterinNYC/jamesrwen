@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.create(project_params)
     if @project.save
-      render :show
+      redirect_to project_path(@project)
     else
       respond_with(@project) do |format|
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -28,6 +28,7 @@ class ProjectsController < ApplicationController
   
   def index
     @projects = Project.all
+    params[:source] = "ADMIN"
   end
   
   def new
@@ -46,19 +47,22 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def classes
-    @title = "Class Projects"
+  def courses
+    @title = "Course Projects"
     @projects = Project.where(category: "COURSE")
+    params[:source] = "COURSE"
   end
 
   def hackathons
     @title = "Hackathons"
     @projects = Project.where(category: "HACKATHON")
+    params[:source] = "HACKATHON"
   end
 
   def portfolio
     @title = "Portfolio"
     @projects = Project.where(category: "PERSONAL")
+    params[:source] = "PERSONAL"
   end
   
   protected 
