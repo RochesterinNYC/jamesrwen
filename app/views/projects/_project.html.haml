@@ -1,4 +1,4 @@
-.project-frame
+.project-frame.text-center
   = link_to project_path(project, source: params[:source]) do
     .project-title
       = project.title
@@ -8,7 +8,8 @@
       = project.modifier
     .project-link
       = project.site_link
-  .project-admin
-    = link_to "Edit", edit_project_path(project)
-    = link_to "Delete", project_path(project), method: 'DELETE'
+  - if current_user
+    .project-admin
+      = link_to "Edit", edit_project_path(project)
+      = link_to "Delete", project_path(project), method: 'DELETE'
 %br

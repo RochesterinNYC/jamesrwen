@@ -1,37 +1,37 @@
-.frame
+.project-show-frame
   - if flash[:notice]
     .notice
       = flash[:notice]
-  %h3.text-center
+  .project-title.text-center
     = @project.title
-  %h4
+  .project-category
     Type:
     = @project.category.capitalize
-  %h4
-    = @project.course? && !@project.modifier.nil? ? "Course:" : ""
-    = @project.hackathon? && !@project.modifier.nil? ? "Hackathon:" : ""
+  .project-modifier
+    = @project.course? && !@project.modifier.blank? ? "Course:" : ""
+    = @project.hackathon? && !@project.modifier.blank? ? "Hackathon:" : ""
     = @project.modifier
-  .row
-    - @project.get_images.each do |image_name|
-      = image_tag(image_name)
-  %h4
-    = @project.site_link.nil? ? "" : "Site:"
+  .project-site
+    = @project.site_link.blank? ? "" : "Site:"
     = @project.site_link
-  %h4
-    = @project.github_link.nil? ? "" : "Github:"
+  .project-github
+    = @project.github_link.blank? ? "" : "Github:"
     = @project.github_link
-  %h4
-    = @project.download_link.nil? ? "" : "Download:"
+  .project-download
+    = @project.download_link.blank? ? "" : "Download:"
     = @project.download_link
-  %h4
-    Description: 
+  .project-description
+    Description:
     = @project.description
-- if params[:source]
-  - if params[:source] == "ADMIN"
-    = link_to "Back to All Projects", projects_path
-  - if params[:source] == "COURSE"
-    = link_to "Back to Course Projects", courses_path
-  - if params[:source] == "HACKATHON"
-    = link_to "Back to Hackathon Projects", hackathons_path
-  - if params[:source] == "PERSONAL"
-    = link_to "Back to Personal Projects", portfolio_path
+  .project-content
+  %br
+  %br
+  - if params[:source]
+    - if params[:source] == "ADMIN"
+      = link_to "Back to All Projects", projects_path
+    - if params[:source] == "COURSE"
+      = link_to "Back to Course Projects", courses_path
+    - if params[:source] == "HACKATHON"
+      = link_to "Back to Hackathon Projects", hackathons_path
+    - if params[:source] == "PERSONAL"
+      = link_to "Back to Personal Projects", portfolio_path

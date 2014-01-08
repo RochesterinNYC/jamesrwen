@@ -39,18 +39,47 @@
     text-align: left;
     display: block;
     width: 90%;
-    border: solid;
     .project-frame {
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a:hover {
+        color: red;
+      }
       display: block;
       .project-title {
-        border: solid;
+        font-size: 2em;
       }
       .project-description {
-        border: solid;
+        font-size: 1.2em;
       }
       .project-link {
-        border: solid;
       }
+    }
+    .project-show-frame {
+      .project-title {
+        font-size: 2em;
+      }
+      .project-category {
+        font-size: 1em;
+      }
+      .project-modifier {
+        font-size: 1em;
+      }
+      .project-site {
+        font-size: 1em;
+      }
+      .project-github {
+        font-size: 1em;
+      }
+      .project-download {
+        font-size: 1em;
+      }
+      .project-description {
+        font-size: 1em;
+      }
+
     }
   }
 }
