@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
 
+  before_filter :get_project, only: [:destroy, :edit, :show, :update]
+  before_filter :require_user, only: [:create, :destroy, :edit, :new, :show, :update]
+
   respond_to :html, :json
 
-  before_filter :get_project, only: [:destroy, :edit, :show, :update]
   def create
     @project = Project.create(project_params)
     if @project.save

@@ -19,6 +19,10 @@ PersonalSite::Application.routes.draw do
   match "/soundcloud", to: redirect("https://soundcloud.com/james-rochester-wen"), as: :soundcloud, via: :get
 
   resources :projects
+
+  get '/login', to: 'sessions#new', :as => "login"
+  post '/verify', to: 'sessions#create', :as => 'verify'
+  post '/logout', to: 'sessions#destroy', :as => 'logout'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
