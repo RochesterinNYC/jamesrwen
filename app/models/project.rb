@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  VALID_CATEGORIES = %w{ CLASS HACKATHON PERSONAL }
+  VALID_CATEGORIES = %w{ COURSE HACKATHON PERSONAL }
   validates :title, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: true
   validates :num_images, presence: true

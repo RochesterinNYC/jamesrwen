@@ -19,8 +19,8 @@
     = link_to "Personal Portfolio", portfolio_path
   .nav-link
     = link_to "TA Notes", ta_path
-  .nav-link
-    = link_to "Miscellaneous", miscellaneous_path
+  -#.nav-link
+  -#  = link_to "Miscellaneous", miscellaneous_path
   - if current_user
     .nav-link
       = link_to "Logout", logout_path, method: 'post'

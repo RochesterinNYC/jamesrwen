@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
 
   def classes
     @title = "Class Projects"
-    @projects = Project.where(category: "CLASS")
+    @projects = Project.where(category: "COURSE")
   end
 
   def hackathons

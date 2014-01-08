@@ -8,8 +8,9 @@
     Type:
     = @project.category.capitalize
   %h4
-    = @project.course.nil? ? "" : "Course:"
-    = @project.course
+    = @project.course? && !@project.modifier.nil? ? "Course:" : ""
+    = @project.hackathon? && !@project.modifier.nil? ? "Hackathon:" : ""
+    = @project.modifier
   .row
     - @project.get_images.each do |image_name|
       = image_tag(image_name)
