@@ -1,1 +1,6 @@
+%h4
+  = link_to "Create New Project", new_project_path
+%br
+%h3
+  Existing Projects:
 = render partial: 'projects/display', locals: {projects: @projects}
