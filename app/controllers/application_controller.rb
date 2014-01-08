@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def require_user
-    current_user ? true : flash[:notice] = "Please login."; redirect_to root_path
+    if current_user
+      return true
+    else 
+      flash[:notice] = "Please login."
+      redirect_to root_path
+    end
   end
 end

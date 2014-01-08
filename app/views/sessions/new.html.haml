@@ -1,8 +1,8 @@
 %form{ action: "verify", method: "post" }
   %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s}
   %label
-    Email Address
-  %input#session_email{ type: "text", name: "session[email]"}
+    Username
+  %input#session_username{ type: "text", name: "session[username]"}
   %br
   %label
     Password
@@ -11,4 +11,3 @@
       %br
       %input{ name: "commit", type: "submit", value: "Log in" } 
       %br
-  = link_to "Sign Up", signup_path
