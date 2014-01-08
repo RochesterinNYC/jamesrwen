@@ -1,23 +1,27 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
-
-# Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'redcarpet'
+
+#Rails 4 assets group deprecated
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 1.2'
 
 group :development do
   gem 'rails_layout'
-  gem 'better_errors'               # more helpful error screens for dev
-  gem 'binding_of_caller'         # enable REPL and local/instance variable inspection
+  gem 'better_errors'               
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
@@ -31,34 +35,11 @@ group :development, :test do
   gem 'pry-debugger'
   gem 'machinist'
 end
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
 
 group :production do
   gem 'rails_12factor'
 end
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-# Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

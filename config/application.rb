@@ -13,6 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module PersonalSite
   PERSONAL_EMAIL = "jrw2175@columbia.edu"
+  MARKDOWN = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, space_after_headers: false, lax_spacing: true, underline: true, highlight: true, quote: true)
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
