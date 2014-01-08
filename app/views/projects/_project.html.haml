@@ -7,4 +7,7 @@
     = project.course
   .project-link
     = project.site_link
+  .project-admin
+    = link_to "Edit", edit_project_path(project)
+    = link_to "Delete", project_path(project), method: 'DELETE'
 %br

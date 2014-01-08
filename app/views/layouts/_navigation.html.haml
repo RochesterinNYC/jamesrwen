@@ -4,6 +4,9 @@
   %br
   .nav-link
     = link_to "Home", root_path
+  - if current_user
+    .nav-link
+      = link_to "Admin Dashboard", projects_path
   .nav-link
     = link_to "About", about_path
   .nav-link

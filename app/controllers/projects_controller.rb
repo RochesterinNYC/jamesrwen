@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_filter :get_project, only: [:destroy, :edit, :show, :update]
-  before_filter :require_user, only: [:create, :destroy, :edit, :new, :show, :update]
+  before_filter :require_user, only: [:create, :destroy, :edit, :index, :new, :update]
 
   respond_to :html, :json
 
@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     #flash[:success] = "Project was deleted."
+    redirect_to projects_path
   end
   
   def edit
