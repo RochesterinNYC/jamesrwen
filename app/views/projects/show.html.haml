@@ -1,0 +1,24 @@
+.frame
+  %h3.text-center
+    = @project.title
+  %h4
+    Type:
+    = @project.category.capitalize
+  %h4
+    = @project.course.nil? ? "" : "Course:"
+    = @project.course
+  .row
+    - @project.get_images.each do |image_name|
+      = image_tag(image_name)
+  %h4
+    = @project.course.nil? ? "" : "Site:"
+    = @project.site_link
+  %h4
+    = @project.course.nil? ? "" : "Github:"
+    = @project.github_link
+  %h4
+    = @project.course.nil? ? "" : "Download:"
+    = @project.download_link
+  %h4
+    Description: 
+    = @project.description
