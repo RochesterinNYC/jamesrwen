@@ -1,16 +1,6 @@
 class ProjectsController < ApplicationController
-  def index
-    @projects = Project.all
-  end
-  def new
-    @project = Project.new
-  end
-  def edit
-    @project = Project.find(params[:id])
-  end
-  def show
-    @project = Project.find(params[:id])
-  end
+
+  before_filter :get_project, only: [:edit, :show]
   def create
     @project = Project.create(project_params)
     if @project.save
@@ -22,8 +12,29 @@ class ProjectsController < ApplicationController
       end
     end
   end
+  
+  def edit
+  end
+  
+  def index
+    @projects = Project.all
+  end
+  
+  def new
+    @project = Project.new
+  end
+  
+  def show
+  end
+  
+  protected 
+  def get_project
+    @project = Project.find(params[:id])
+  end
+  
   private
   def project_params
     params.require(:project).permit(:category, :title, :course, :description, :site_link, :github_link, :download_link, :priority)
-  end 
+  end
+   
 end
