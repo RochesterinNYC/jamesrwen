@@ -44,6 +44,21 @@ class ProjectsController < ApplicationController
       render :edit
     end
   end
+
+  def classes
+    @title = "Class Projects"
+    @projects = Project.where(category: "CLASS")
+  end
+
+  def hackathons
+    @title = "Hackathons"
+    @projects = Project.where(category: "HACKATHON")
+  end
+
+  def portfolio
+    @title = "Portfolio"
+    @projects = Project.where(category: "PERSONAL")
+  end
   
   protected 
   def get_project

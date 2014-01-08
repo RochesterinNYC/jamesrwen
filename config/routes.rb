@@ -7,10 +7,10 @@ PersonalSite::Application.routes.draw do
 
   match "/about", to: "pages#about", as: :about, via: :get
   match "/education", to: "pages#education", as: :education, via: :get
-  match "/class-projects", to: "pages#projects", as: :classprojects, via: :get
+  match "/class-projects", to: "projects#classes", as: :classprojects, via: :get
+  match "/hackathons", to: "projects#hackathons", as: :hackathons, via: :get
+  match "/portfolio", to: "projects#portfolio", as: :portfolio, via: :get
   match "/ta", to: "pages#ta", as: :ta, via: :get
-  match "/hackathons", to: "pages#hackathons", as: :hackathons, via: :get
-  match "/portfolio", to: "pages#portfolio", as: :portfolio, via: :get
   match "/miscellaneous", to: "pages#miscellaneous", as: :miscellaneous, via: :get
 
   match "/github", to: redirect("https://github.com/RochesterinNYC"), as: :github, via: :get

@@ -1,0 +1,3 @@
+.frame
+  - projects.each do |project_instance|
+    = render partial: 'projects/project', locals: {project: project_instance}
