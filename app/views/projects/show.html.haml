@@ -15,14 +15,23 @@
     - @project.get_images.each do |image_name|
       = image_tag(image_name)
   %h4
-    = @project.course.nil? ? "" : "Site:"
+    = @project.site_link.nil? ? "" : "Site:"
     = @project.site_link
   %h4
-    = @project.course.nil? ? "" : "Github:"
+    = @project.github_link.nil? ? "" : "Github:"
     = @project.github_link
   %h4
-    = @project.course.nil? ? "" : "Download:"
+    = @project.download_link.nil? ? "" : "Download:"
     = @project.download_link
   %h4
     Description: 
     = @project.description
+- if params[:source]
+  - if params[:source] == "ADMIN"
+    = link_to "Back to All Projects", projects_path
+  - if params[:source] == "COURSE"
+    = link_to "Back to Course Projects", courses_path
+  - if params[:source] == "HACKATHON"
+    = link_to "Back to Hackathon Projects", hackathons_path
+  - if params[:source] == "PERSONAL"
+    = link_to "Back to Personal Projects", portfolio_path
