@@ -1,16 +1,23 @@
 class ProjectsController < ApplicationController
 
-  before_filter :get_project, only: [:edit, :show]
+  respond_to :html, :json
+
+  before_filter :get_project, only: [:destroy, :edit, :show, :update]
   def create
     @project = Project.create(project_params)
     if @project.save
-      redirect_to edit_project_path(@project)
+      render :show
     else
       respond_with(@project) do |format|
         format.json { render json: @project.errors, status: :unprocessable_entity }
-        format.html { redirect_to :new }
+        format.html { render :new }
       end
     end
+  end
+
+  def destroy
+    @project.destroy
+    #flash[:success] = "Project was deleted."
   end
   
   def edit
@@ -26,6 +33,15 @@ class ProjectsController < ApplicationController
   
   def show
   end
+
+  def update
+    if @project.update_attributes(project_params)
+      render :show
+    else
+      flash[:notice] = "Project not updated"
+      render :edit
+    end
+  end
   
   protected 
   def get_project
@@ -34,7 +50,7 @@ class ProjectsController < ApplicationController
   
   private
   def project_params
-    params.require(:project).permit(:category, :title, :course, :description, :site_link, :github_link, :download_link, :priority)
+    params.require(:project).permit(:category, :title, :handle, :num_images, :course, :description, :site_link, :github_link, :download_link, :priority)
   end
-   
+
 end
