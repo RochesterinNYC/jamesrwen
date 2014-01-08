@@ -1,4 +1,7 @@
 .frame
+  - if flash[:notice]
+    .notice
+      = flash[:notice]
   %h3.text-center
     = @project.title
   %h4

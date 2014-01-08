@@ -1,7 +1,9 @@
 class Project < ActiveRecord::Base
 
   VALID_CATEGORIES = %w{ CLASS HACKATHON PERSONAL WORK }
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
+  validates :handle, presence: true, uniqueness: true
+  validates :num_images, presence: true
   validates :description, presence: true
   validates :category, presence: true
   validates_inclusion_of :category, in: VALID_CATEGORIES
@@ -15,6 +17,15 @@ class Project < ActiveRecord::Base
 
   def self.valid_categories
     VALID_CATEGORIES
+  end
+
+  def get_images
+    images ||= Array.new
+    for i in 1..num_images
+      image_name = handle + i.to_s + ".png"
+      images << image_name
+    end
+    images
   end
 
 end
