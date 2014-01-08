@@ -14,7 +14,7 @@ describe User do
     end
   end
   context "valid email addresses" do
-    let(:user) { User.make! ({ email: 'ACCOUNT@test.COM'})}
+    let(:user) { User.make! ({ email: 'ACCOUNT@test.COM' })}
     it "should have downcase email" do
       user.save
       expect(user.email).to eq("account@test.com")
