@@ -25,7 +25,7 @@
     = @project.description
   - if !@project.content.blank?
     .project-content
-      = PersonalSite::MARKDOWN.render(@project.content)
+      = PersonalSite::MARKDOWN.render(@project.content).html_safe
   %br
   %br
   - if params[:source]
