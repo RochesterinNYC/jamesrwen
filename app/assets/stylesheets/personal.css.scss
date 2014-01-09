@@ -2,18 +2,23 @@
   position:fixed;
   width: 12%;
   height: 100%;
-  background-color: grey;
-  padding: 0 10px 0 10px;
+  background-color: white;
   .nav-link {
+    display: block;
     text-align: center;
-    padding: 15px 5px 0px 5px;
-    a {
-      color: white;
-      text-decoration: none;
+    padding: 10px 5px 10px 5px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+    &:hover {
+      border: solid;
+      background-color: #7E8AA2;
     }
   }
   #social-links {
     position: absolute;
+    padding: 0 10px 0 10px;
     width: 100%;
     bottom: 0;
     a {
