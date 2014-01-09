@@ -30,6 +30,11 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     params[:source] = "ADMIN"
   end
+
+  def markdown
+    html_content = PersonalSite::MARKDOWN.render(params[:markdown_content])
+    render json: {html_content: html_content}
+  end
   
   def new
     @project = Project.new
@@ -72,7 +77,7 @@ class ProjectsController < ApplicationController
   
   private
   def project_params
-    params.require(:project).permit(:category, :title, :handle, :num_images, :modifier, :description, :site_link, :github_link, :download_link, :priority)
+    params.require(:project).permit(:category, :title, :handle, :num_images, :modifier, :content, :description, :site_link, :github_link, :download_link, :priority)
   end
 
 end
