@@ -13,8 +13,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
     &:hover {
       border: solid;
-      background-color: #7E8AA2;
+      background-color: #129793;
     }
+  }
+  .active-link {
+    border: solid;
+    background-color: #7E8AA2;
   }
   #social-links {
     position: absolute;
