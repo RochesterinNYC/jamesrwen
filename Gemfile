@@ -6,6 +6,8 @@ gem 'pg'
 
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'redcarpet'
+gem 'rmagick'
+gem 'paperclip'
 
 #Rails 4 assets group deprecated
 gem 'sass-rails', '~> 4.0.0'
