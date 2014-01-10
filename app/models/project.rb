@@ -17,6 +17,10 @@ class Project < ActiveRecord::Base
   [:image1, :image2, :image3, :image4, :image5].each do |image|
     validates_attachment image, content_type: { content_type: ["image/jpg", "image/gif", "image/png"] }
   end
+  #Create image delete methods
+  [:image1, :image2, :image3, :image4, :image5, :source_download].each do |attachment|
+    define_method("#{attachment}_delete".to_sym) { self.send("#{attachment}=", nil); self.save! }
+  end
 
   #Create project category query and bang methods
   VALID_CATEGORIES.each do |category|

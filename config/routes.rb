@@ -25,6 +25,7 @@ PersonalSite::Application.routes.draw do
   post '/logout', to: 'sessions#destroy', :as => 'logout'
 
   post '/markdown', to: 'projects#markdown', :as => 'markdown'
+  post '/delete_attachment', to: 'projects#delete_attachment', :as => 'delete_attachment'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
-  before_filter :get_project, only: [:destroy, :edit, :show, :update]
-  before_filter :require_user, only: [:create, :destroy, :edit, :index, :new, :update]
+  before_filter :get_project, only: [:delete_attachment, :destroy, :edit, :show, :update]
+  before_filter :require_user, only: [:create, :delete_attachment, :destroy, :edit, :index, :markdown, :new, :update]
 
   respond_to :html, :json
 
@@ -15,6 +15,11 @@ class ProjectsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  def delete_attachment
+    @project.send("#{params[:attachment]}_delete")
+    redirect_to edit_project_path(@project)
   end
 
   def destroy
