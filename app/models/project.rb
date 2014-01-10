@@ -1,12 +1,22 @@
 class Project < ActiveRecord::Base
 
   VALID_CATEGORIES = %w{ COURSE HACKATHON PERSONAL }
+
+  has_attached_file :source_download, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image1, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image2, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image3, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image4, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image5, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
   validates :title, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: true
-  validates :num_images, presence: true
   validates :description, presence: true
   validates :category, presence: true
   validates_inclusion_of :category, in: VALID_CATEGORIES
+  [:image1, :image2, :image3, :image4, :image5].each do |image|
+    validates_attachment image, content_type: { content_type: ["image/jpg", "image/gif", "image/png"] }
+  end
 
   #Create project category query and bang methods
   VALID_CATEGORIES.each do |category|
@@ -17,15 +27,6 @@ class Project < ActiveRecord::Base
 
   def self.valid_categories
     VALID_CATEGORIES
-  end
-
-  def get_images
-    images ||= Array.new
-    for i in 1..num_images
-      image_name = handle + i.to_s + ".png"
-      images << image_name
-    end
-    images
   end
 
 end

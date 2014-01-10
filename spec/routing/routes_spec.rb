@@ -8,8 +8,8 @@ describe "routes" do
     it "should route /about" do
       expect(get: "/about").to route_to(controller: "pages", action: "about")
     end
-    it "should route /class-projects" do
-      expect(get: "/class-projects").to route_to(controller: "projects", action: "classes")
+    it "should route /courses" do
+      expect(get: "/courses").to route_to(controller: "projects", action: "courses")
     end
   end
 end

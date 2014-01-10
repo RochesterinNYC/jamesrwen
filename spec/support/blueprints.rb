@@ -13,5 +13,4 @@ Project.blueprint do
   title { "Test Project" }
   description { "Project object for testing" }
   handle { "test" }
-  num_images { 1 }
 end

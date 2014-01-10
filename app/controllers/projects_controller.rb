@@ -77,7 +77,7 @@ class ProjectsController < ApplicationController
   
   private
   def project_params
-    params.require(:project).permit(:category, :title, :handle, :num_images, :modifier, :content, :description, :site_link, :github_link, :download_link, :priority)
+    params.require(:project).permit(:category, :title, :handle, :modifier, :content, :description, :site_link, :github_link, :priority, :image1, :image2, :image3, :image4, :image5, :source_download)
   end
 
 end

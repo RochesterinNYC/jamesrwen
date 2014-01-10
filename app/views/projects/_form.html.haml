@@ -16,19 +16,32 @@
       = f.label :handle
       = f.text_field :handle
     .row
-      = f.label :num_images
-      = f.text_field :num_images
-    .row
       = f.label :site_link
       = f.text_field :site_link
     .row
       = f.label :github_link
       = f.text_field :github_link
     .row
-      = f.label :download_link
-      = f.text_field :download_link
+      = f.label :source_download
+      = f.file_field :source_download
+    .row
+      = f.label :image1
+      = f.file_field :image1
+    .row
+      = f.label :image2
+      = f.file_field :image2
+    .row
+      = f.label :image3
+      = f.file_field :image3
+    .row
+      = f.label :image4
+      = f.file_field :image4
+    .row
+      = f.label :image5
+      = f.file_field :image5
     .row
       = f.label :content
+      %br
       = f.text_area :content, size: '75x10', id: "markdown-input"
     .row
       #see_preview.btn.btn-primary

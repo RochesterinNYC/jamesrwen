@@ -12,15 +12,4 @@ describe Project do
       end
     end
   end
-  context "project get_image" do
-    let(:project) { Project.make! ({ handle: "image_test", num_images: 3 })}
-    it "should return array of proper image count" do
-      expect(project.get_images.count).to eq(3)
-    end
-    it "should return proper image names" do
-      project.get_images.each_with_index do |image_name, index|
-        expect(image_name).to eq("image_test" + (index + 1).to_s + ".png")
-      end
-    end
-  end
 end
