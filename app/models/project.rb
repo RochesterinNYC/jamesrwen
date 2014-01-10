@@ -2,12 +2,12 @@ class Project < ActiveRecord::Base
 
   VALID_CATEGORIES = %w{ COURSE HACKATHON PERSONAL }
 
-  has_attached_file :source_download, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_attached_file :image1, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_attached_file :image2, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_attached_file :image3, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_attached_file :image4, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_attached_file :image5, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :source_download, styles: { default_url: "/public/source/:handle.tar.gz" }
+  has_attached_file :image1, styles: { thumbnail: "100x100>" }
+  has_attached_file :image2, styles: { thumbnail: "100x100>" }
+  has_attached_file :image3, styles: { thumbnail: "100x100>" }
+  has_attached_file :image4, styles: { thumbnail: "100x100>" }
+  has_attached_file :image5, styles: { thumbnail: "100x100>" }
   
   validates :title, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: true

@@ -27,18 +27,23 @@
     .row
       = f.label :image1
       = f.file_field :image1
+      = link_to(image_tag(project.image1.url(:thumbnail)), project.image1.url) if project.image1.present?
     .row
       = f.label :image2
       = f.file_field :image2
+      = link_to(image_tag(project.image2.url(:thumbnail)), project.image2.url) if project.image2.present?
     .row
       = f.label :image3
       = f.file_field :image3
+      = link_to(image_tag(project.image3.url(:thumbnail)), project.image3.url) if project.image3.present?
     .row
       = f.label :image4
       = f.file_field :image4
+      = link_to(image_tag(project.image4.url(:thumbnail)), project.image4.url) if project.image4.present?
     .row
       = f.label :image5
       = f.file_field :image5
+      = link_to(image_tag(project.image5.url(:thumbnail)), project.image5.url) if project.image5.present?
     .row
       = f.label :content
       %br
