@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.create(project_params)
     if @project.save
+      params[:source] = "ADMIN"
       redirect_to project_path(@project)
     else
       respond_with(@project) do |format|
@@ -50,6 +51,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update_attributes(project_params)
+      params[:source] = "ADMIN"
       render :show
     else
       flash[:notice] = "Project not updated"

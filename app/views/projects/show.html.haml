@@ -1,22 +1,8 @@
 .project-show-frame
-  .project-title.text-center
-    = @project.title
-  .project-category
-    Type:
-    = @project.category.capitalize
-  .project-modifier
-    = @project.course? && !@project.modifier.blank? ? "Course:" : ""
-    = @project.hackathon? && !@project.modifier.blank? ? "Hackathon:" : ""
-    = @project.modifier
-  .project-site
-    = @project.site_link.blank? ? "" : "Site:"
-    = @project.site_link
-  .project-github
-    = @project.github_link.blank? ? "" : "Github:"
-    = @project.github_link
-  .project-description
-    Description:
-    = @project.description
+  .project-details-frame
+    .project-title.text-center
+      = @project.title
+  %br
   - if !@project.content.blank?
     .project-content
       = PersonalSite::MARKDOWN.render(@project.content).html_safe
