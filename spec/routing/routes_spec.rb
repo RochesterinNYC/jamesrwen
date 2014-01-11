@@ -11,5 +11,14 @@ describe "routes" do
     it "should route /courses" do
       expect(get: "/courses").to route_to(controller: "projects", action: "courses")
     end
+    it "should route /verify" do
+      expect(post: "/verify").to route_to(controller: "sessions", action: "create")
+    end
+    it "should route /markdown" do
+      expect(post: "/markdown").to route_to(controller: "projects", action: "markdown")
+    end
+    it "should route /delete_attachment" do
+      expect(post: "/delete_attachment").to route_to(controller: "projects", action: "delete_attachment")
+    end
   end
 end

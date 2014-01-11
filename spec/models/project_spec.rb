@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe Project do
+  
   describe 'project category methods' do
     let(:project) { Project.make! }
     Project.valid_categories.each do |category|
@@ -12,4 +13,5 @@ describe Project do
       end
     end
   end
+  
 end
