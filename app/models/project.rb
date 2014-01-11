@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :handle, use: :slugged
 
   VALID_CATEGORIES = %w{ COURSE HACKATHON PERSONAL }
 
