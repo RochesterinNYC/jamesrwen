@@ -13,5 +13,9 @@
         = @title
       .frame
         = yield
-      = render 'layouts/initialize_js'
-
+      .copyright.text-center
+        ©
+        = Date.today.strftime("%B")
+        2014 - James Wen
+    = render 'layouts/initialize_js'
+    
