@@ -88,7 +88,30 @@
       .project-description {
         font-size: 1em;
       }
-
+    }
+    form {
+      padding: 0 0 0 65px;
+      .row {
+        margin: 0 0 0 0;
+        padding: 10px 0 10px 0;
+        .col {
+          display: block;
+          padding: 0 40px 0 0;
+          float: left;
+          .image-input {
+            width: 200px;
+          }
+          .btn {
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+          a {
+            img {
+              float: left;
+            }
+          }
+        }
+      }      
     }
   }
 }
