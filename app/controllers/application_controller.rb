@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def require_user
     if current_user
       return true
-    else 
+    else
       flash[:notice] = "Please login."
       redirect_to root_path
     end

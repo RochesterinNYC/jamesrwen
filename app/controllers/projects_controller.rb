@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   end
 
   def delete_attachment
-    @project.send("#{params[:attachment]}_delete")
+    @project.delete_attachment(params[:attachment])
     redirect_to edit_project_path(@project)
   end
 
@@ -28,10 +28,10 @@ class ProjectsController < ApplicationController
     #flash[:success] = "Project was deleted."
     redirect_to projects_path
   end
-  
+
   def edit
   end
-  
+
   def index
     @projects = Project.all
     params[:source] = "ADMIN"
@@ -41,11 +41,11 @@ class ProjectsController < ApplicationController
     html_content = PersonalSite::MARKDOWN.render(params[:markdown_content])
     render json: {html_content: html_content}
   end
-  
+
   def new
     @project = Project.new
   end
-  
+
   def show
   end
 
@@ -61,27 +61,27 @@ class ProjectsController < ApplicationController
 
   def courses
     @title = "Course Projects"
-    @projects = Project.where(category: "COURSE")
+    @projects = Project.course
     params[:source] = "COURSE"
   end
 
   def hackathons
     @title = "Hackathons"
-    @projects = Project.where(category: "HACKATHON")
+    @projects = Project.hackathon
     params[:source] = "HACKATHON"
   end
 
   def portfolio
     @title = "Portfolio"
-    @projects = Project.where(category: "PERSONAL")
+    @projects = Project.personal
     params[:source] = "PERSONAL"
   end
-  
+
   protected
   def get_project
     @project = Project.friendly.find(params[:id])
   end
-  
+
   private
   def project_params
     params.require(:project).permit(:category, :title, :handle, :modifier, :content, :description, :site_link, :github_link, :priority, :image1, :image2, :image3, :image4, :image5, :source_download)

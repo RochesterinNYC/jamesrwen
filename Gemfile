@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 1.2'
 
 group :development do
   gem 'rails_layout'
-  gem 'better_errors'               
+  gem 'better_errors'
   gem 'binding_of_caller'
 end
 

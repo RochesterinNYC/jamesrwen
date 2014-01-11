@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
   has_attached_file :image3, url: "/projects/:handle/:basename_:style.:extension", styles: { thumbnail: "100x100>", regular: "300x300>" }
   has_attached_file :image4, url: "/projects/:handle/:basename_:style.:extension", styles: { thumbnail: "100x100>", regular: "300x300>" }
   has_attached_file :image5, url: "/projects/:handle/:basename_:style.:extension", styles: { thumbnail: "100x100>", regular: "300x300>" }
-  
+
   validates :title, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: true
   validates :description, presence: true
@@ -33,6 +33,10 @@ class Project < ActiveRecord::Base
 
   def self.valid_categories
     VALID_CATEGORIES
+  end
+
+  def delete_attachment(attachment)
+    self.send("#{attachment}_delete")
   end
 
 end
