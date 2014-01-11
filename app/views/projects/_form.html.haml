@@ -42,7 +42,6 @@
       = f.label :source_download
       = f.file_field :source_download, class: "btn btn-info"
       - if project.persisted? && project.source_download.present?
-        %br
         .btn.btn-info 
           = link_to "Delete Source", delete_attachment_path(id: project.id, attachment: "source_download"), method: :post
       = link_to "Project Source", project.source_download.url if project.source_download.present?
@@ -51,35 +50,31 @@
       = f.label :image1
       = f.file_field :image1, class: "image-input btn btn-info"
       - if project.persisted? && project.image1.present?
-        %br
         .btn.btn-info 
           = link_to "Delete Image 1", delete_attachment_path(id: project.id, attachment: "image1"), method: :post
-      = link_to(image_tag(project.image1.url(:thumbnail)), project.image1.url) if project.image1.present?
+        = link_to(image_tag(project.image1.url(:thumbnail)), project.image1.url)
     .col
       = f.label :image2
       = f.file_field :image2, class: "image-input btn btn-info"
       - if project.persisted? && project.image2.present?
-        %br
         .btn.btn-info 
           = link_to "Delete Image 2", delete_attachment_path(id: project.id, attachment: "image2"), method: :post
-      = link_to(image_tag(project.image2.url(:thumbnail)), project.image2.url) if project.image2.present?
+        = link_to(image_tag(project.image2.url(:thumbnail)), project.image2.url)
     .col
       = f.label :image3
       = f.file_field :image3, class: "image-input btn btn-info"
       - if project.persisted? && project.image3.present?
-        %br
         .btn.btn-info 
           = link_to "Delete Image 3", delete_attachment_path(id: project.id, attachment: "image3"), method: :post
-      = link_to(image_tag(project.image3.url(:thumbnail)), project.image3.url) if project.image3.present?
+        = link_to(image_tag(project.image3.url(:thumbnail)), project.image3.url)
   .row  
     .col
       = f.label :image4
       = f.file_field :image4, class: "image-input btn btn-info"
       - if project.persisted? && project.image4.present?
-        %br
         .btn.btn-info 
           = link_to "Delete Image 4", delete_attachment_path(id: project.id, attachment: "image4"), method: :post
-      = link_to(image_tag(project.image4.url(:thumbnail)), project.image4.url) if project.image4.present?
+        = link_to(image_tag(project.image4.url(:thumbnail)), project.image4.url)
     .col
       = f.label :image5
       = f.file_field :image5, class: "image-input btn btn-info"
@@ -87,7 +82,7 @@
         .btn.btn-info 
           = link_to "Delete Image 5", delete_attachment_path(id: project.id, attachment: "image5"), method: :post
         %br
-      = link_to(image_tag(project.image5.url(:thumbnail)), project.image5.url) if project.image5.present?
+        = link_to(image_tag(project.image5.url(:thumbnail)), project.image5.url)
   %h3
     Project Contents:
   .row

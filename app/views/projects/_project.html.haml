@@ -2,10 +2,10 @@
   = link_to project_path(project, source: params[:source]) do
     .project-title
       = project.title
-    .project-description
-      = project.description
     .project-modifier
       = project.modifier
+    .project-description
+      = project.description
     .project-link
       = project.site_link
   - if current_user
