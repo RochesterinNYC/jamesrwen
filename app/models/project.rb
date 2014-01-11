@@ -2,16 +2,12 @@ class Project < ActiveRecord::Base
 
   VALID_CATEGORIES = %w{ COURSE HACKATHON PERSONAL }
 
-  Paperclip.interpolates :img_name do |attachment, style|
-    attachment.instance.img_name
-  end
-
   has_attached_file :source_download, url: "/projects/:handle/:filename"
-  has_attached_file :image1, url: "/projects/:handle/:filename", styles: { thumbnail: "100x100>" }
-  has_attached_file :image2, url: "/projects/:handle/:filename", styles: { thumbnail: "100x100>" }
-  has_attached_file :image3, url: "/projects/:handle/:filename", styles: { thumbnail: "100x100>" }
-  has_attached_file :image4, url: "/projects/:handle/:filename", styles: { thumbnail: "100x100>" }
-  has_attached_file :image5, url: "/projects/:handle/:filename", styles: { thumbnail: "100x100>" }
+  has_attached_file :image1, url: "/projects/:handle/:basename_:style.:extension", styles: { :thumbnail => "100x100>", :regular => "300x300>" }
+  has_attached_file :image2, url: "/projects/:handle/:basename_:style.:extension", styles: { thumbnail: "100x100>", regular: "300x300>" }
+  has_attached_file :image3, url: "/projects/:handle/:basename_:style.:extension", styles: { thumbnail: "100x100>", regular: "300x300>" }
+  has_attached_file :image4, url: "/projects/:handle/:basename_:style.:extension", styles: { thumbnail: "100x100>", regular: "300x300>" }
+  has_attached_file :image5, url: "/projects/:handle/:basename_:style.:extension", styles: { thumbnail: "100x100>", regular: "300x300>" }
   
   validates :title, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: true

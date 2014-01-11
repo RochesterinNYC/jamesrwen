@@ -44,7 +44,8 @@
       - if project.persisted? && project.source_download.present?
         .btn.btn-info 
           = link_to "Delete Source", delete_attachment_path(id: project.id, attachment: "source_download"), method: :post
-      = link_to "Project Source", project.source_download.url if project.source_download.present?
+        .btn.btn-info  
+          = link_to "Project Source", project.source_download.url, class: "source-link" if project.source_download.present?
   .row
     .col
       = f.label :image1
