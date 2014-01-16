@@ -87,4 +87,6 @@ PersonalSite::Application.configure do
     },
     :url => 'http://jamesrwen.s3.amazonaws.com/'
   }
+
+  GA.tracker = "UA-35915936-3"
 end

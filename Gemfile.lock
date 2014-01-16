@@ -71,6 +71,7 @@ GEM
     formatador (0.2.4)
     friendly_id (5.0.2)
       activerecord (~> 4.0.0)
+    google-analytics-rails (0.0.4)
     guard (2.2.5)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -231,6 +232,7 @@ DEPENDENCIES
   childprocess (= 0.3.6)
   coffee-rails (~> 4.0.0)
   friendly_id
+  google-analytics-rails
   guard-rspec
   guard-spork (= 1.5.0)
   haml
