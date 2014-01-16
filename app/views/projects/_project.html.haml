@@ -6,8 +6,8 @@
       = project.modifier
     .project-description
       = project.description
-    .project-link
-      = project.site_link
+  .project-link
+    = link_to project.site_link, project.site_link, target: "_blank"
   - if current_user
     .project-admin
       = link_to "Edit", edit_project_path(project)
