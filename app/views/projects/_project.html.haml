@@ -7,7 +7,15 @@
     .project-description
       = project.description
   .project-link
-    = link_to project.site_link, project.site_link, target: "_blank"
+    - if !project.course? && !project.site_link.blank?
+      = link_to project.site_link, project.site_link, target: "_blank" 
+      %br
+    - if !project.github_link.blank?
+      = link_to project.github_link, project.github_link, target: "_blank"
+      %br
+    - if project.course? && !project.source_download.blank?
+      = link_to "Source Code Download", project.source_download(:original, false), target: "_blank"
+      %br
   - if current_user
     .project-admin
       = link_to "Edit", edit_project_path(project)

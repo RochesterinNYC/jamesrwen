@@ -42,6 +42,10 @@
   height: 100%;
 
   .frame {
+    .projects-frame {
+      text-align: center;
+      margin: 20px 0 0 0;
+    }
     margin-left: auto;
     margin-right: auto;
     padding: 15px 15px 15px 15px;
@@ -49,6 +53,8 @@
     display: block;
     width: 90%;
     .project-frame {
+      display: inline-block;
+      margin: 0 0 20px 0;
       a {
         text-decoration: none;
         color: inherit;
@@ -56,7 +62,6 @@
       a:hover {
         color: red;
       }
-      display: block;
       .project-title {
         font-size: 2em;
       }
