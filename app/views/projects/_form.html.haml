@@ -84,6 +84,14 @@
           = link_to "Delete Image 5", delete_attachment_path(id: project.id, attachment: "image5"), method: :post
         %br
         = link_to(image_tag(project.image5.url(:thumbnail)), project.image5.url)
+    .col
+      = f.label :image6
+      = f.file_field :image6, class: "image-input btn btn-info"
+      - if project.persisted? && project.image6.present?
+        .btn.btn-info
+          = link_to "Delete Image 6", delete_attachment_path(id: project.id, attachment: "image6"), method: :post
+        %br
+        = link_to(image_tag(project.image6.url(:thumbnail)), project.image6.url)
   %h3
     Project Contents:
   .row
