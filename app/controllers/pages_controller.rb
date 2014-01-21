@@ -1,17 +1,16 @@
 class PagesController < ApplicationController
   def index
-    @title = "Home"
   end
   def about
-    @title = "About"
+    @title = "ABOUT"
   end
   def education
-    @title = "Education"
+    @title = "EDUCATION"
   end
   def ta
-    @title = "Teaching Assistant"
+    @title = "TEACHING NOTES"
   end
   def miscellaneous
-    @title = "Miscellaneous"
+    @title = "MISCELLANEOUS"
   end
 end

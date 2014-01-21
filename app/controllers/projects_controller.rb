@@ -60,19 +60,19 @@ class ProjectsController < ApplicationController
   end
 
   def courses
-    @title = "Course Projects"
+    @title = "COURSE PROJECTS"
     @projects = Project.course
     params[:source] = "COURSE"
   end
 
   def hackathons
-    @title = "Hackathons"
+    @title = "HACKATHON PROJECTS"
     @projects = Project.hackathon
     params[:source] = "HACKATHON"
   end
 
   def portfolio
-    @title = "Portfolio"
+    @title = "PORTFOLIO PROJECTS"
     @projects = Project.personal
     params[:source] = "PERSONAL"
   end

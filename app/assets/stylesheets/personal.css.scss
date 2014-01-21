@@ -1,8 +1,41 @@
+@font-face {
+    font-family: 'actor';
+    src: font-url('actor.ttf');
+    src: font-url('actor.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'average';
+    src: font-url('average.ttf');
+    src: font-url('average.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: font-url('OpenSans.ttf');
+    src: font-url('OpenSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AlteHaasGrotesk';
+    src: font-url('AlteHaasGrotesk.ttf');
+    src: font-url('AlteHaasGrotesk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #vertical-nav {
   position:fixed;
   width: 14%;
   height: 100%;
   background-color: #393939;
+  font-family: 'average';
   .nav-link {
     display: block;
     font-size: 1.1em;
@@ -35,6 +68,18 @@
 body {
     background-color: #F0F0F0;
     color: #202020;
+    font-family: 'vg';
+}
+hr {
+  border-top: 1px solid #C7BEBE;
+}
+a {
+  text-decoration: none;
+  color: #004687;
+}
+a:hover {
+  text-decoration: none;
+  color: #B81D18;
 }
 
 .content {
@@ -44,8 +89,12 @@ body {
   overflow: auto;
   display: block;
   height: 100%;
-
+  h3 {
+    font-family: 'AlteHaasGrotesk';
+    font-size: 2.5em;
+  }
   .frame {
+    font-family: 'OpenSans';
     .projects-frame {
       text-align: center;
       margin: 20px 0 0 0;
@@ -57,6 +106,7 @@ body {
     display: block;
     width: 90%;
     .project-frame {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       display: inline-block;
       margin: 0 0 20px 0;
       a {
@@ -76,30 +126,17 @@ body {
       }
     }
     .project-show-frame {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
       .project-details-frame {
         margin-left: auto;
         margin-right: auto;
         text-align: left;
         .project-title {
-          font-size: 2em;
-        }
-        .project-category {
-          font-size: 1em;
-        }
-        .project-modifier {
-          font-size: 1em;
-        }
-        .project-site {
-          font-size: 1em;
-        }
-        .project-github {
-          font-size: 1em;
-        }
-        .project-download {
-          font-size: 1em;
-        }
-        .project-description {
-          font-size: 1em;
+          font-family: 'AlteHaasGrotesk';
+          font-size: 3em;
         }
       }
     }
@@ -139,6 +176,8 @@ body {
     }
   }
   .copyright {
+    font-family: 'OpenSans';
+    font-size: 13px;
     padding: 20px 0 20px 0;
   }
 }
