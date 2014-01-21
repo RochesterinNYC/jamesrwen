@@ -1,28 +1,28 @@
 #vertical-nav {
   position:fixed;
-  width: 12%;
+  width: 14%;
   height: 100%;
-  background-color: white;
+  background-color: #393939;
   .nav-link {
     display: block;
+    font-size: 1.1em;
     text-align: center;
     padding: 10px 5px 10px 5px;
-    color: black;
+    color: white;
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
     &:hover {
-      border: solid;
-      background-color: #129793;
+      background-color: #B81D18;
     }
   }
   .active-link {
-    border: solid;
-    background-color: #7E8AA2;
+    background-color: #004687;
   }
   #social-links {
     position: absolute;
     padding: 0 10px 0 10px;
+    margin: 0 0 0 6%;
     width: 100%;
     bottom: 0;
     a {
@@ -31,6 +31,10 @@
       padding: 1px;
     }
   }
+}
+body {
+    background-color: #F0F0F0;
+    color: #202020;
 }
 
 .content {
@@ -60,7 +64,7 @@
         color: inherit;
       }
       a:hover {
-        color: red;
+        color: #B81D18;
       }
       .project-title {
         font-size: 2em;
@@ -125,6 +129,13 @@
           }
         }
       }      
+    }
+    .about-frame {
+      width: 80%;
+      .headshot-img {
+        float: left;
+        padding: 0 20px 20px 0;
+      }
     }
   }
   .copyright {
