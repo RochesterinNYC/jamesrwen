@@ -2,7 +2,6 @@
   .project-details-frame
     .project-title.text-center
       = @project.title
-  %br
   - if !@project.content.blank?
     .project-content
       = PersonalSite::MARKDOWN.render(@project.content).html_safe

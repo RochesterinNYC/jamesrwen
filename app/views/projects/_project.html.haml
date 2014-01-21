@@ -6,16 +6,13 @@
       = project.modifier
     .project-description
       = project.description
-  .project-link
+  .project-links
     - if !project.course? && !project.site_link.blank?
-      = link_to project.site_link, project.site_link, target: "_blank" 
-      %br
+      = link_to "Site", project.site_link, target: "_blank", class: "btn project-site-link"
     - if !project.github_link.blank?
-      = link_to project.github_link, project.github_link, target: "_blank"
-      %br
+      = link_to "Github", project.github_link, target: "_blank", class: "btn project-github-link"
     - if project.course? && !project.source_download.blank?
-      = link_to "Source Code Download", project.source_download(:original, false), target: "_blank"
-      %br
+      = link_to "Source", project.source_download(:original, false), target: "_blank", class: "btn project-source-link"
   - if current_user
     .project-admin
       = link_to "Edit", edit_project_path(project)

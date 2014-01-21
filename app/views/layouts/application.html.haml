@@ -11,9 +11,10 @@
   %body
     = render 'layouts/navigation'
     .content.text-center
-      %h3
-        = @title
       .frame
+        - if !@title.blank?
+          %h3.container.text-center
+            = @title
         = yield
       .copyright.text-center
         ©
