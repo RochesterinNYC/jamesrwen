@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.order('priority').all
     params[:source] = "ADMIN"
   end
 
@@ -61,19 +61,19 @@ class ProjectsController < ApplicationController
 
   def courses
     @title = "COURSE PROJECTS"
-    @projects = Project.course
+    @projects = Project.order('priority').course
     params[:source] = "COURSE"
   end
 
   def hackathons
     @title = "HACKATHON PROJECTS"
-    @projects = Project.hackathon
+    @projects = Project.order('priority').hackathon
     params[:source] = "HACKATHON"
   end
 
   def portfolio
     @title = "PORTFOLIO PROJECTS"
-    @projects = Project.personal
+    @projects = Project.order('priority').personal
     params[:source] = "PERSONAL"
   end
 
