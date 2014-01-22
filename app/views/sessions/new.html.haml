@@ -2,10 +2,12 @@
   %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s}
   %label
     Username
+  %br
   %input#session_username{ type: "text", name: "session[username]"}
   %br
   %label
     Password
+  %br
   %input#session_password{ type: "password", name: "session[password]"}
     .actions
       %br
