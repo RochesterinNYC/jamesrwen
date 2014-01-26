@@ -1,0 +1,6 @@
+%h4
+  = link_to "Create New Upload", new_upload_path
+%h3
+  Existing Uploads:
+.uploads-frame
+  = render partial: 'uploads/display', locals: {uploads: @uploads}

@@ -1,0 +1,15 @@
+.upload-frame.text-center
+  = link_to upload_path(upload) do
+    .upload-handle
+      = upload.handle
+    .upload-description
+      = upload.description
+    .upload-file-name
+      = upload.file_file_name
+  .upload-thumbnail
+    - if upload.file.present?
+      = link_to(image_tag(upload.file.url(:thumbnail)), upload.file.url)
+  .upload-admin
+    = link_to "Edit", edit_upload_path(upload)
+    = link_to "Delete", upload_path(upload), method: 'DELETE'
+%br

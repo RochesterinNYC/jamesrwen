@@ -2,16 +2,15 @@
 
   = link_to "James Wen", root_path, class: "nav-link"
   = link_to "Home", root_path, class: "nav-link home-link"
-  - if current_user
-    = link_to "Admin Dashboard", projects_path, class: "nav-link projects-link"
+  = link_to "Admin Dashboard", projects_path, class: "nav-link projects-link" if current_user
   = link_to "About", about_path, class: "nav-link about-link"
   = link_to "Education", education_path, class: "nav-link education-link"
   = link_to "Personal Portfolio", portfolio_path, class: "nav-link portfolio-link"
   = link_to "Course Projects", courses_path, class: "nav-link courses-link"
   = link_to "Hackathons", hackathons_path, class: "nav-link hackathons-link"
   = link_to "Blog", posts_path, class: "nav-link blog-link"
-  - if current_user
-    = link_to "Logout", logout_path, method: 'post', class: "nav-link"
+  = link_to "Uploads", uploads_path, class: "nav-link uploads-link" if current_user
+  = link_to "Logout", logout_path, method: 'post', class: "nav-link" if current_user
   #social-links
     = link_to image_tag("github-icon.png"), github_path, target: "_blank"
     = link_to image_tag("linkedin-icon.png"), linkedin_path, target: "_blank"

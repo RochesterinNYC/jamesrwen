@@ -17,3 +17,4 @@
 
 # Ignore locally uploaded images
 /public/projects
+/public/uploads

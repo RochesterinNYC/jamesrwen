@@ -19,8 +19,8 @@ PersonalSite::Application.routes.draw do
   match "/soundcloud", to: redirect("https://soundcloud.com/james-rochester-wen"), as: :soundcloud, via: :get
 
   resources :projects
-
   resources :posts
+  resources :uploads
 
   get '/login', to: 'sessions#new', :as => "login"
   post '/verify', to: 'sessions#create', :as => 'verify'
@@ -28,5 +28,7 @@ PersonalSite::Application.routes.draw do
 
   post '/markdown', to: 'projects#markdown', :as => 'markdown'
   post '/delete_attachment', to: 'projects#delete_attachment', :as => 'delete_attachment'
+  post '/delete_file', to: 'uploads#delete_file', :as => 'delete_file'
+
 
 end

@@ -1,0 +1,16 @@
+.upload-show-frame
+  .upload-details-frame
+    .upload-handle.text-center
+      = @upload.handle
+    .upload-description.text-center
+      = @upload.description
+  - if !@upload.file.blank?
+    .upload-file-name.text-center
+      = @upload.file_file_name
+    .upload-file-url.text-center
+      = @upload.file.url  
+    = link_to(image_tag(@upload.file.url(:original)), @upload.file.url)
+  - else
+    %h4.text-center
+      No attachment.
+  %br
