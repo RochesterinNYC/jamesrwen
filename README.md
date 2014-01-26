@@ -5,13 +5,17 @@ This is my personal site intended to better portray my personal background and e
 
 The site presents a description about my current background and experiences, my previously taken and current courses, and introductions to my personal, class, and hackathon projects.
 
+---
+
 ###Features
 
-####Admin Accounts with Extended Features
+####Admin Accounts with Extended Features:
 
-![Personal Site Login](http://s3.amazonaws.com/jamesrwen/app/public/projects/jamesrwen/personalsitelogin_original.png?1390363914 "Personal Site Login")
+![Personal Site Login](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsitelogin_original.png?1390771410 "Personal Site Login")
 
-Logging in with your username and password (bcrypt encryption used) will allow the user to access the admin capabilities and dashboard.
+Logging in with your username and password ([bcrypt](http://bcrypt-ruby.rubyforge.org/) encryption used) will allow the user to access the admin capabilities and dashboard, all of which are integrated into the page views and sidebar.
+
+![Personal Site Admin](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsiteadmin_original.png?1390771402 "Personal Site Admin")
 
 Admin Capabilities include:
 - Creating new Projects and their views (markdown content)
@@ -19,25 +23,39 @@ Admin Capabilities include:
 - Uploading files and attachments
 - Creating and editing blog posts
 
-![Personal Site Admin](http://s3.amazonaws.com/jamesrwen/app/public/projects/jamesrwen/personalsiteadmin_original.png?1390364114 "Personal Site Admin")
+![Personal Site New Project](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsitenewproject_original.png?1390771437 "Personal Site New Project")
 
-####Friendly Links based on Project handles
+---
 
-####Markdown content integration and previews
+####User-friendly Project URLs:
 
-####File upload and attachments
+Projects are given friendly url routes that act as descriptive nicknames or handles. Implemented with [FriendlyId](https://github.com/norman/friendly_id) gem.
+Ex:
 
-Pending Features
-- Blog Posts
+    http://jameswen.herokuapp.com/projects/jamesrwen/edit
+    http://jameswen.herokuapp.com/projects/jamesrwen/
+
+---
+
+####Markdown Content Integration:
+
+All of the project introductions/views are Markdown content. The Project editor also includes a Markdown editor that can render in-page previews of your Markdown content. Rendering for all Markdown is incorporated through the [Redcarpet](https://github.com/vmg/redcarpet) gem.
+
+![Personal Site Markdown](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsitemarkdown_original.png?1390771446 "Personal Site Markdown")
+
+---
+
+####File Uploads and Attachments:
+
+Projects have associated image and source code attachments that are previewed in the Project edit views. Due to the way that images are separately referenced/rendered in the Markdown content sections, this attachment system is being deprecated in favor of a general file upload system where all uploaded files are simply uploads that anything can reference. Uploads are implemented with the [Paperclip](https://github.com/thoughtbot/paperclip) gem and [AWS-SDK](https://github.com/aws/aws-sdk-ruby).
+
+![Personal Site Project Attachments](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsiteattachments_original.png?1390771427 "Personal Site Project Attachments")
+
+---
+
+###Pending Features
+- Blog Post Migration
 - Altering system to replace project attachments with general file uploads and associated gallery
 - Code Highlighting in markdown content and blog posts
 - Tagging System for posts and uploads
 - Comment system on Posts (and maybe uploads?)
-
-![Personal Site Project Attachments](http://s3.amazonaws.com/jamesrwen/app/public/projects/jamesrwen/personalsiteattachments_original.png?1390362070 "Personal Site Project Attachments")
-
-![Personal Site Projects View](http://s3.amazonaws.com/jamesrwen/app/public/projects/jamesrwen/personalsiteprojectsview_original.png?1390362069 "Personal Site Projects View")
-
-![Personal Site New Project](http://s3.amazonaws.com/jamesrwen/app/public/projects/jamesrwen/personalsitenewproject_original.png?1390362071 "Personal Site New Project")
-
-![Personal Site Markdown](http://s3.amazonaws.com/jamesrwen/app/public/projects/jamesrwen/personalsitemarkdown_original.png?1390362072 "Personal Site Markdown")
