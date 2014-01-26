@@ -46,52 +46,6 @@
           = link_to "Delete Source", delete_attachment_path(id: project.id, attachment: "source_download"), method: :post
         .btn.btn-info
           = link_to "Project Source", project.source_download.url, class: "source-link" if project.source_download.present?
-  .row
-    .col
-      = f.label :image1
-      = f.file_field :image1, class: "image-input btn btn-info"
-      - if project.persisted? && project.image1.present?
-        .btn.btn-info
-          = link_to "Delete Image 1", delete_attachment_path(id: project.id, attachment: "image1"), method: :post
-        = link_to(image_tag(project.image1.url(:thumbnail)), project.image1.url)
-    .col
-      = f.label :image2
-      = f.file_field :image2, class: "image-input btn btn-info"
-      - if project.persisted? && project.image2.present?
-        .btn.btn-info
-          = link_to "Delete Image 2", delete_attachment_path(id: project.id, attachment: "image2"), method: :post
-        = link_to(image_tag(project.image2.url(:thumbnail)), project.image2.url)
-    .col
-      = f.label :image3
-      = f.file_field :image3, class: "image-input btn btn-info"
-      - if project.persisted? && project.image3.present?
-        .btn.btn-info
-          = link_to "Delete Image 3", delete_attachment_path(id: project.id, attachment: "image3"), method: :post
-        = link_to(image_tag(project.image3.url(:thumbnail)), project.image3.url)
-  .row
-    .col
-      = f.label :image4
-      = f.file_field :image4, class: "image-input btn btn-info"
-      - if project.persisted? && project.image4.present?
-        .btn.btn-info
-          = link_to "Delete Image 4", delete_attachment_path(id: project.id, attachment: "image4"), method: :post
-        = link_to(image_tag(project.image4.url(:thumbnail)), project.image4.url)
-    .col
-      = f.label :image5
-      = f.file_field :image5, class: "image-input btn btn-info"
-      - if project.persisted? && project.image5.present?
-        .btn.btn-info
-          = link_to "Delete Image 5", delete_attachment_path(id: project.id, attachment: "image5"), method: :post
-        %br
-        = link_to(image_tag(project.image5.url(:thumbnail)), project.image5.url)
-    .col
-      = f.label :image6
-      = f.file_field :image6, class: "image-input btn btn-info"
-      - if project.persisted? && project.image6.present?
-        .btn.btn-info
-          = link_to "Delete Image 6", delete_attachment_path(id: project.id, attachment: "image6"), method: :post
-        %br
-        = link_to(image_tag(project.image6.url(:thumbnail)), project.image6.url)
   %h3
     Project Contents:
   .row
