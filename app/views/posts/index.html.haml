@@ -1,7 +1,7 @@
 - if current_user
   %h4
     = link_to "Create New Post", new_post_path
-%h3
+%h3.text-center
   Recent Posts:
 .posts-frame
   = render partial: 'posts/display', locals: {posts: @posts}

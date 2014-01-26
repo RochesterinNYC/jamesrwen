@@ -193,6 +193,40 @@ a:hover {
         padding: 0 20px 20px 0;
       }
     }
+    .posts-frame {
+      .post-frame {
+        a {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            color: #B81D18;
+          }
+          .post-title {
+            font-size: 1.8em;
+          }
+          .post-description {
+            font-size: 1em;
+          }
+          .post-created {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+    .post-show-frame {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+      .post-details-frame {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        .post-title {
+          font-size: 3em;
+        }
+      }
+    }
   }
   .copyright {
     font-family: 'OpenSans';

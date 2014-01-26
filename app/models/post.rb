@@ -8,11 +8,15 @@ class Post < ActiveRecord::Base
   validates :description, presence: true
   
   def get_created_at
-    #Return formatted date
+    created_at.strftime("%B %d, %Y")
   end
 
-  def get_modified_at
-    #Return formatted date
+  def get_created_at_time
+    created_at.strftime("%B %d, %Y at %I:%M %p")
+  end
+
+  def get_updated_at
+    updated_at.strftime("%B %d, %Y")
   end
 
 end 

@@ -2,6 +2,10 @@
   .post-details-frame
     .post-title.text-center
       = @post.title
+    .post-created.text-center
+      Published: 
+      = @post.get_created_at_time
+  %br
   - if !@post.content.blank?
     .post-content
       = PersonalSite::MARKDOWN.render(@post.content).html_safe

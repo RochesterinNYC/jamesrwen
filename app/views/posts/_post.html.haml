@@ -4,6 +4,8 @@
       = post.title
     .post-description
       = post.description
+    .post-created
+      = post.get_created_at
   - if current_user
     .post-admin
       = link_to "Edit", edit_post_path(post)
