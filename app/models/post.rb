@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
 
+  extend FriendlyId
+  friendly_id :handle, use: :slugged
+
   validates :title, presence: true, uniqueness: true
   validates :handle, presence: true, uniqueness: true
   validates :description, presence: true
