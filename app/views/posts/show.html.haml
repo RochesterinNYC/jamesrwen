@@ -1,0 +1,8 @@
+.post-show-frame
+  .post-details-frame
+    .post-title.text-center
+      = @post.title
+  - if !@post.content.blank?
+    .post-content
+      = PersonalSite::MARKDOWN.render(@post.content).html_safe
+  %br

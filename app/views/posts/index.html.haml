@@ -1,0 +1,6 @@
+%h4
+  = link_to "Create New Post", new_post_path
+%h3
+  Recent Posts:
+.posts-frame
+  = render partial: 'posts/display', locals: {posts: @posts}

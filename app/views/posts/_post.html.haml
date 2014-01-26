@@ -1,0 +1,11 @@
+.post-frame.text-center
+  = link_to post_path(post) do
+    .post-title
+      = post.title
+    .post-description
+      = post.description
+  - if current_user
+    .post-admin
+      = link_to "Edit", edit_post_path(post)
+      = link_to "Delete", post_path(post), method: 'DELETE'
+%br

@@ -9,8 +9,7 @@
   = link_to "Personal Portfolio", portfolio_path, class: "nav-link portfolio-link"
   = link_to "Course Projects", courses_path, class: "nav-link courses-link"
   = link_to "Hackathons", hackathons_path, class: "nav-link hackathons-link"
-  = link_to "TA Notes", ta_path, class: "nav-link ta-link"
-  -#= link_to "Miscellaneous", miscellaneous_path, class: "nav-link miscellaneous-link"
+  = link_to "Blog", posts_path, class: "nav-link blog-link"
   - if current_user
     = link_to "Logout", logout_path, method: 'post', class: "nav-link"
   #social-links

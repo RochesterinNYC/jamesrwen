@@ -10,7 +10,7 @@ PersonalSite::Application.routes.draw do
   match "/courses", to: "projects#courses", as: :courses, via: :get
   match "/hackathons", to: "projects#hackathons", as: :hackathons, via: :get
   match "/portfolio", to: "projects#portfolio", as: :portfolio, via: :get
-  match "/ta", to: "pages#ta", as: :ta, via: :get
+  match "/blog", to: "posts#index", as: :blog, via: :get
   match "/miscellaneous", to: "pages#miscellaneous", as: :miscellaneous, via: :get
 
   match "/github", to: redirect("https://github.com/RochesterinNYC"), as: :github, via: :get
@@ -19,6 +19,8 @@ PersonalSite::Application.routes.draw do
   match "/soundcloud", to: redirect("https://soundcloud.com/james-rochester-wen"), as: :soundcloud, via: :get
 
   resources :projects
+
+  resources :posts
 
   get '/login', to: 'sessions#new', :as => "login"
   post '/verify', to: 'sessions#create', :as => 'verify'
