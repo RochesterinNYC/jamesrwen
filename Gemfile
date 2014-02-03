@@ -11,6 +11,7 @@ gem 'paperclip'
 gem 'friendly_id'
 gem 'aws-sdk'
 gem 'google-analytics-rails'
+gem 'thin'
 
 #Rails 4 assets group deprecated
 gem 'sass-rails', '~> 4.0.0'
