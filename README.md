@@ -1,4 +1,4 @@
-<a href="http://jameswen.herokuapp.com/" target="_blank">Personal Site</a>
+<a href="http://jamesrwen.com/" target="_blank">Personal Site</a>
 -------
 
 This is my personal site intended to better portray my personal background and experiences. Also, who doesn't like having a virtual home on the web?
@@ -11,11 +11,11 @@ The site presents a description about my current background and experiences, my 
 
 ####Admin Accounts with Extended Features:
 
-![Personal Site Login](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsitelogin_original.png?1390771410 "Personal Site Login")
+![Personal Site Login](http://s3.amazonaws.com/jamesrwen/var/www/jamesrwen/public/uploads/personalsitelogin_original.png?1391394575 "Personal Site Login")
 
 Logging in with your username and password ([bcrypt](http://bcrypt-ruby.rubyforge.org/) encryption used) will allow the user to access the admin capabilities and dashboard, all of which are integrated into the page views and sidebar.
 
-![Personal Site Admin](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsiteadmin_original.png?1390771402 "Personal Site Admin")
+![Personal Site Admin](http://s3.amazonaws.com/jamesrwen/var/www/jamesrwen/public/uploads/personalsiteadmin_original.png?1391394552 "Personal Site Admin")
 
 Admin Capabilities include:
 - Creating new Projects and their views (markdown content)
@@ -23,7 +23,7 @@ Admin Capabilities include:
 - Uploading files and attachments
 - Creating and editing blog posts
 
-![Personal Site New Project](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsitenewproject_original.png?1390771437 "Personal Site New Project")
+![Personal Site New Project](http://s3.amazonaws.com/jamesrwen/var/www/jamesrwen/public/uploads/personalsitenewproject_original.png?1391394598 "Personal Site New Project")
 
 ---
 
@@ -41,7 +41,7 @@ Ex:
 
 All of the project introductions/views are Markdown content. The Project editor also includes a Markdown editor that can render in-page previews of your Markdown content. Rendering for all Markdown is incorporated through the [Redcarpet](https://github.com/vmg/redcarpet) gem.
 
-![Personal Site Markdown](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsitemarkdown_original.png?1390771446 "Personal Site Markdown")
+![Personal Site Markdown](http://s3.amazonaws.com/jamesrwen/var/www/jamesrwen/public/uploads/personalsitemarkdown_original.png?1391394605 "Personal Site Markdown")
 
 ---
 
@@ -49,7 +49,7 @@ All of the project introductions/views are Markdown content. The Project editor 
 
 Projects have associated image and source code attachments that are previewed in the Project edit views. Due to the way that images are separately referenced/rendered in the Markdown content sections, this attachment system is being deprecated in favor of a general file upload system where all uploaded files are simply uploads that anything can reference. Uploads are implemented with the [Paperclip](https://github.com/thoughtbot/paperclip) gem and [AWS-SDK](https://github.com/aws/aws-sdk-ruby).
 
-![Personal Site Project Attachments](http://s3.amazonaws.com/jamesrwen/app/public/uploads/personalsiteattachments_original.png?1390771427 "Personal Site Project Attachments")
+![Personal Site Project Attachments](http://s3.amazonaws.com/jamesrwen/var/www/jamesrwen/public/uploads/personalsiteattachments_original.png?1391394591 "Personal Site Project Attachments")
 
 ---
 
