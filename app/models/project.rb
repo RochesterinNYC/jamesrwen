@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
   extend FriendlyId
   friendly_id :handle, use: :slugged
 
-  VALID_CATEGORIES = %w{ COURSE HACKATHON PERSONAL }
+  VALID_CATEGORIES = %w{ COURSE HACKATHON PERSONAL INACTIVE }
 
   has_attached_file :source_download, url: "/projects/:handle/:filename"
 
